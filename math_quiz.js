@@ -9,8 +9,11 @@ time = 60;
 function presentProblem() {
     const quiz = document.getElementById("quiz");
     quiz.innerHTML = "<div id='problem'>" + generateProblem() + "</div>" + "<div id='interface'><input type='text' id='answerBox'> <input type='button' id='submitAnswer' value='submit'></div> <div id='score'>score: " + score + "</div>";
+    let answerBox = document.getElementById("answerBox");
+    answerBox.focus();
     let submitAnswerButton = document.getElementById("submitAnswer");
     submitAnswerButton.addEventListener("click", nextQuestion);
+    window.onkeydown = ( (evt) => {if (evt.key === "Enter") {nextQuestion()}} );
     timer = document.getElementById("timer");
     timer.innerHTML = time;
 }
