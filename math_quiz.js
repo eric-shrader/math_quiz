@@ -38,7 +38,7 @@ function generateProblem() {
 function nextQuestion() {
     const answerBox = document.getElementById("answerBox");
     answer = answerBox.value;
-    if (answer == solution) {
+    if (answer === solution + "") {
         score++;
     }
     presentProblem();
